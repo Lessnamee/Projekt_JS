@@ -79,6 +79,10 @@ nav ul li a {
     border-radius: 50%;
 }
 
+.doctors{
+    margin-left: 100px;
+}
+
 h2 {
     font-size: 20px;
     margin: 10px 0;
