@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizyta u lekarza</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="clinic-logo">
+                <img src="img/logo.jpg" alt="Logo Przychodni">
+            </div>
+            <div class="clinic-name">
+                <h1>MediCare</h1>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="lekarze.html">Nasi lekarze</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="o-nas.html">O nas</a></li>
+            <li><a href="oferta.html">Oferta</a></li>
+            <li><a href="kalendarz.html">Kalendarz</a></li>
+        </ul>
+    </nav>
+    <h1>Rezerwacja wizyty</h1>
+    
+
+    <div class="doctors" id="doctor-details">
+        <div class="this-doctor">
+        <img class="doctor-image" src="img/lek1.jpg" alt="Dr. Jan Kowalski">
+        <h3>Dr. Jan Kowalski</h3>
+        <p>Pediatra</p>
+        </div>
+    </div>
+
+    <div id="appointment-calendar">
+        <h2>Wybierz termin wizyty:</h2>
+        <div id="calendar"></div>
+    </div>
+    
+
+    <div id="appointment-purpose">
+        <h2>Wybierz cel wizyty:</h2>
+        <select id="purpose-list">
+            <option value="wizyta-kontrolna">Wizyta kontrolna</option>
+            <option value="konsultacja">Konsultacja</option>
+            <option value="choroba">Choroba</option>
+            <option value="wypisanie-recepty">Wypisanie recepty</option>
+            <option value="szczepienie">Szczepienie</option>
+        </select>
+    </div>
+
+    <div id="service-prices">
+        <h2>Cennik usług:</h2>
+        <ul>
+            <li>Wizyta kontrolna - 100 zł</li>
+            <li>Konsultacja - 80 zł</li>
+            <li>Choroba - 120 zł</li>
+            <li>Wypisanie recepty - 40 zł</li>
+            <li>Szczepienie - 60 zł</li>
+        </ul>
+    </div>
+
+    <div id="umow-button">
+        <a href="umow-wizyte.html" class="appointment-button">Umów</a>
+    </div>
+
+    <script src="lekarz-info.js"></script>
+</body>
+</html>
+
+
+

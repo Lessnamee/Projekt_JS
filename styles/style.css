@@ -19,11 +19,13 @@ h1 {
     font-size: 24px;
     color: #0d3f44;
 }
-h2{
+
+h2 {
     text-align: center;
     font-size: 12px;
     color: #0d3f44;
 }
+
 header {
     background-color: #96dee6;
     color: #fff;
@@ -38,7 +40,8 @@ header {
 }
 
 .clinic-logo img {
-    max-width: 100px; /* Dostosuj szerokość loga według potrzeb */
+    max-width: 100px;
+    /* Dostosuj szerokość loga według potrzeb */
 }
 
 .clinic-name h1 {
@@ -64,6 +67,7 @@ nav ul li a {
     color: #fff;
     font-weight: bold;
 }
+
 /* Karty lekarzy */
 .doctor-card {
     background-color: #cbf2f6;
@@ -84,7 +88,19 @@ nav ul li a {
     border-radius: 50%;
 }
 
-.doctors{
+.this-doctor{
+    background-color: #cbf2f6;
+    border: 3px solid #69c3cb;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.doctors {
     margin-left: 100px;
 }
 
@@ -104,4 +120,78 @@ p {
 .availability {
     font-weight: bold;
     color: #00a0e4;
+}
+
+
+/* Styl sekcji "appointment-calendar" */
+#appointment-calendar {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#appointment-calendar h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#calendar {
+    width: 100%;
+    max-width: 600px; /* Dostosuj szerokość kalendarza do swoich potrzeb */
+    margin: 0 auto; /* Wyśrodkuj kalendarz */
+}
+
+/* Styl sekcji "appointment-purpose" */
+#appointment-purpose {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#appointment-purpose h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#purpose-list {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Styl sekcji "service-prices" */
+#service-prices {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#service-prices h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#service-prices ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#service-prices li {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Styl przycisku "Umów" */
+.appointment-button {
+    margin-left: 1380px;
+    margin-bottom: 50px;
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.appointment-button:hover {
+    background-color: #0056b3;
 }
