@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Przychodnia - Umawianie wizyty</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css"> 
+    <link rel="stylesheet" type="text/css" href="styles/calendar.css"> 
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="clinic-logo">
+                <img src="img/logo.png" alt="Logo Przychodni">
+            </div>
+            <div class="clinic-name">
+                <h1>LekMed</h1>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="lekarze.html">Nasi lekarze</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="o-nas.html">O nas</a></li>
+            <li><a href="oferta.html">Oferta</a></li>
+            <li><a href="kalendarz.html">Kalendarz</a></li>
+        </ul>
+    </nav>
+
+    <h2>Dostępne terminy:</h2>
+    <center><h3>Grudzień 2023</h3></center>
+  
+
+  <center>  <table id="calendar">
+        <tr>
+          <th class="day-name">Poniedziałek</th>
+          <th class="day-name">Wtorek</th>
+          <th class="day-name">Środa</th>
+          <th class="day-name">Czwartek</th>
+          <th class="day-name">Piątek</th>
+          <th class="day-name">Sobota</th>
+          <th class="day-name">Niedziela</th>
+        </tr>
+        <tr>
+          <td class="other_month"><span class="number">27</span></td>
+          <td class="other_month"><span class="number">28</span>
+           
+            </td>
+          <td class="other_month" id="lekarzCell"><span class="number">29</span><div class="event" "lekarz1">
+            <div class="event-desc">
+              Janusz Kowalski 
+            </div>
+            <div class="event-time">
+              10:15
+            </br>
+              10:30
+          </br>
+              11:45
+            </div>
+        </div></td>
+          <td class="day today" id="lekarzCell"><span class="number">30</span><div class="event" id="lekarz3">
+            <div class="event-desc">
+              Maria Wiśniewska
+            </div>
+            <div class="event-time">
+              9:30
+            </br>
+              10:30
+          </br>
+            12:30
+            </br>
+            14:00
+            </div>
+        </div></td>
+          <td class="day" id="lekarzCell" ><span class="number">1</span> <div class="event" id="lekarz4">
+            <div class="event-desc" >
+              Piotr Kowalski 
+            </div>
+            <div class="event-time">
+              10:15
+            </br>
+              10:30
+          </br>
+              11:45
+            </div>
+        </div>
+        <div class="event" id="lekarz2">
+            <div class="event-desc">
+                Anna Nowak
+              </div>
+              <div class="event-time">
+                8:00
+              </div>
+            </div></td>
+         
+          <td class="weekend"><span class="number">5</span></span></td>
+          <td class="weekend"><span class="number" >6</span></span></td>
+        </tr>
+        <tr>
+          <td id="niedostepne" class="niedostepne"><span class="number">7</span>
+            <div class="unav">
+            Brak Terminów
+          </div>
+            </td>
+          <td class="day"><span class="number">8</span></span></td>
+          <td class="day"><span class="number">9</span></td>
+          <td class="day"><span class="number">10</span></td>
+          <td class="day"><span class="number">11</span></td>
+          <td class="weekend"><span class="number">12</span></td>
+          <td class="weekend"><span class="number">13</span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number">14</span></td>
+          <td class="day"><span class="number">15</span></td>
+          <td class="day"><span class="number">16</span></span></td>
+          <td class="day"><span class="number">17</span></span></td>
+          <td class="day"><span class="number">18</span></td>
+          <td class="weekend"><span class="number">19</span></td>
+          <td class="weekend"><span class="number">20</span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number">21</span></td>
+          <td class="day"><span class="number">22</span></td>
+          <td class="day"><span class="number">23</span></td>
+          <td class="day"><span class="number">24</span></td>
+          <td class="day"><span class="number">25</span></td>
+          <td class="weekend"><span class="number">26</span></td>
+          <td class="weekend"><span class="number">27</span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number">28</span></td>
+          <td class="day"><span class="number">29</span></td>
+          <td class="day"><span class="number">30</span></td>
+          <td class="day"><span class="number">1</span></td>
+          <td class="day"><span class="number">2</span></td>
+          <td class="weekend"><span class="number">3</span></td>
+          <td class="weekend"><span class="number">4</span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number">5</span></td>
+          <td class="day"><span class="number">6</span></span></td>
+          <td class="day"><span class="number">7</span></td>
+          <td class="day"><span class="number">8</span></td>
+          <td class="day"><span class="number">9</span></td>
+          <td class="weekend"><span class="number">10</span></td>
+          <td class="weekend"><span class="number">11</span></td>
+        </tr>
+      </table>
+    </center> 
+  
+    
+</body>
+</html>
