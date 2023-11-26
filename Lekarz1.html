@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
     <script src="calendar.js"></script>
     <script src="rezerwacja.js"></script>
+    <script src="style.js"></script>
 
 </head>
 
@@ -45,7 +46,8 @@
         </div></center>
     </div>
 
-    <h2>Wybierz termin wizyty:</h2>
+  </br>
+    <center><h3>Grudzień 2023</h3></center>
       <center>  <table id="calendar">
         <tr>
           <th class="day-name">Poniedziałek</th>
@@ -186,7 +188,9 @@
         </tr>
        
       </table>
-    
+    </br>
+      <center><h3>Podaj termin i rodzaj wizyty:</h3></center>
+
     <form id="appointmentForm">
     </br>
     <input type="hidden" id="doctor" value="lekarz1">
@@ -204,7 +208,7 @@
     </select>
       <button type="button"  onclick="saveAppointment()">Dodaj wizytę</button>
     </form>
-  </center> 
+
 
     
 
@@ -218,13 +222,18 @@
             <li>Szczepienie - 60 zł</li>
         </ul>
     </div>
-
+  </center> 
+</br>
+<footer>
+  <small>
+    Copyright © 2023 Patryja Oświęcimska, Kinga Spytkowska All Rights Reserved.
+  </small>
+</footer>
+</body>
     <script>
-      // Przypisz identyfikator lekarza do zmiennej
-      var doctorId = "lekarz1"; // Zmienić na odpowiedni identyfikator dla danej podstrony
-    
-      // Zapisz identyfikator lekarza do Local Storage
-      localStorage.setItem("doctorId", doctorId);
+
+      var doctorId = "lekarz1"; 
+      localStorage.setItem("lekarz1", doctorId);
     </script>
 
 </body>

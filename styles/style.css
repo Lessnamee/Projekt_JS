@@ -1,16 +1,17 @@
-/* Resetowanie marginesów i paddingów dla wszystkich elementów */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Styl strony głównej */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    margin-bottom: 120px;
 }
 
 h1 {
@@ -44,7 +45,7 @@ header {
 .clinic-logo img {
     max-width: 100px;
     max-height: 80px;
-    /* Dostosuj szerokość loga według potrzeb */
+
 }
 
 .clinic-name h1 {
@@ -52,7 +53,7 @@ header {
     margin-left: 10px;
 }
 
-/* Nawigacja */
+
 nav ul {
     list-style-type: none;
     text-align: left;
@@ -78,8 +79,8 @@ nav ul li a {
     margin: 10px;
     padding: 10px;
     text-align: center;
-    max-width: 300px; /* Ustaw maksymalną szerokość karty */
-    flex: 1; /* Wypełnij dostępną przestrzeń w kontenerze */
+    max-width: 300px; 
+    flex: 1; 
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -93,8 +94,8 @@ nav ul li a {
 
 .doctors {
     display: flex;
-    flex-wrap: wrap; /* Karty przeskakują do nowego wiersza */
-    justify-content: center; /* Wyśrodkowanie kart */
+    flex-wrap: wrap; 
+    justify-content: center;
 }
 
 h2 {
@@ -109,7 +110,13 @@ p {
     color: #666;
 }
 
-/* Dodatkowy styl dla dostępności */
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #20818b;
+    color: #000;
+  }
+
 .availability {
     font-weight: bold;
     color: #00a0e4;
