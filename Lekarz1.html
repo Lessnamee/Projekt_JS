@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wizyta u lekarza</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="rezerwacja.css">
     <link rel="stylesheet" type="text/css" href="styles/calendar.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
     <script src="calendar.js"></script>
@@ -18,7 +19,7 @@
     <header>
         <div class="header-content">
             <div class="clinic-logo">
-                <img src="img/logo.png" alt="Logo Przychodni">
+                <img src="img/logo.png" alt="Logo Przychodni" onclick="window.location.href='start.html'">
             </div>
             <div class="clinic-name">
                 <h1>LekMed</h1>
@@ -29,6 +30,7 @@
   h4 {
     color:#582cb0;
   }
+ 
 
 
   
@@ -196,34 +198,40 @@
     </br>
       <center><h3>Podaj termin i rodzaj wizyty:</h3></center>
 
-    <form id="appointmentForm">
-    </br>
-      <label for="appointmentDate">Data wizyty:</label>
-      <input type="date" id="appointmentDate" required>
-      <label for="appointmentTime">Godzina wizyty:</label>
-      <input type="time" id="appointmentTime" step=900 min="08:00" max="17:00" required>
-      <label for="appointmentDescription">Opis wizyty:</label>
-      <select id="purpose-list">
-        <option value="wizyta-kontrolna">Wizyta kontrolna</option>
-        <option value="konsultacja">Konsultacja</option>
-        <option value="choroba">Choroba</option>
-        <option value="wypisanie-recepty">Wypisanie recepty</option>
-        <option value="szczepienie">Szczepienie</option>
-    </select>
-      <button type="button"  onclick="saveAppointment()">Dodaj wizytę</button>
+      <form id="appointmentForm">
+        <div>
+            <label for="appointmentDate">Data wizyty:</label>
+            <input type="date" id="appointmentDate" required onchange="highlightForm()">
+        </div>
+        <div>
+            <label for="appointmentTime">Godzina wizyty:</label>
+            <input type="time" id="appointmentTime" step=900 min="08:00" max="17:00" required>
+        </div>
+        <div>
+            <label for="appointmentDescription">Opis wizyty:</label>
+            <select id="purpose-list">
+                <option value="wizyta-kontrolna">Wizyta kontrolna</option>
+                <option value="konsultacja">Konsultacja</option>
+                <option value="choroba">Choroba</option>
+                <option value="wypisanie-recepty">Wypisanie recepty</option>
+                <option value="szczepienie">Szczepienie</option>
+            </select>
+        </div>
+        <div>
+           <center> <button class="button" type="button" onclick="saveAppointment()">Dodaj wizytę</button> </center>
+        </div>
     </form>
-
 
     
 
     <div id="service-prices">
         <h2>Cennik usług:</h2>
         <ul>
-            <li>Wizyta kontrolna - 100 zł</li>
-            <li>Konsultacja - 80 zł</li>
-            <li>Choroba - 120 zł</li>
-            <li>Wypisanie recepty - 40 zł</li>
-            <li>Szczepienie - 60 zł</li>
+            <li id="purpose1">Wizyta kontrolna - 100 zł</li>
+            <li id="purpose2">Konsultacja - 80 zł</li>
+            <li id="purpose3">Choroba - 120 zł</li>
+            <li id="purpose4">Wypisanie recepty - 40 zł</li>
+            <li id="purpose5">Szczepienie - 60 zł</li>
         </br>
         <h4>*Płatność tylko w placówce!<h4>
         </ul>
@@ -242,9 +250,20 @@
         var formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
         document.getElementById('appointmentDate').value = formattedDate; // Ustaw pełną datę
         document.getElementById('appointmentTime').value = time; // Ustaw godzinę
-
-        // Przykład: Ustaw domyślny opis wizyty
-        document.getElementById('purpose-list').value = 'wizyta-kontrolna'; }
+    
+        // Scroll to the form
+        var form = document.getElementById("appointmentForm");
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+        // Optionally, add a visual highlight by adding a CSS class
+        form.classList.add("highlighted");
+    
+        // Optionally, remove the highlight after a delay
+        setTimeout(function () {
+            form.classList.remove("highlighted");
+        }, 2000); // 2000 milliseconds (2 seconds) in this example
+    }
+    
 
       function saveAppointment() {
         var appointment = {

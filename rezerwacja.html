@@ -45,7 +45,7 @@
     <header>
         <div class="header-content">
             <div class="clinic-logo">
-                <img src="img/logo.png" alt="Logo Przychodni">
+                <img src="img/logo.png" alt="Logo Przychodni"onclick="window.location.href='start.html'">
             </div>
             <div class="clinic-name">
                 <h1>LekMed</h1>
@@ -91,11 +91,11 @@ var doctorsInfo = {
     lekarz4: { name: "Piotr Nowak", specialization: "Lekarz rodzinny" }
 };
 var purposePrice = {
-    purpose1: { price = "100zł"},
-    purpose2: { price = "80zł"},
-    purpose3: { price = "120zł"},
-    purpose4: { price = "40zł"},
-    purpose5: { price = "60zł"}
+    purpose1: { price: "100zł" },
+    purpose2: { price: "80zł" },
+    purpose3: { price: "120zł" },
+    purpose4: { price: "40zł" },
+    purpose5: { price: "60zł" }
 };
 // Wybierz kontener, w którym będą wyświetlane wizyty
 var appointmentsContainer = document.getElementById('appointmentsContainer');
@@ -105,6 +105,7 @@ if (appointmentsList.length > 0) {
     // Wyświetl każdą wizytę w kontenerze
     appointmentsList.forEach(function (appointment, index) {
         var doctorInfo = doctorsInfo[doctorId] || { name: "Brak danych", specialization: "Brak danych" };
+        var purposeInfo = purposePrice[appointment.purpose] || { price: "100zł" };
 
         var appointmentDiv = document.createElement('div');
         appointmentDiv.innerHTML = `
@@ -112,8 +113,10 @@ if (appointmentsList.length > 0) {
             <p>Specjalizacja: ${doctorInfo.specialization}</p>
             <p>Data: ${appointment.date}</p>
             <p>Godzina: ${appointment.time}</p>
+            <p>Cel wizyty: ${appointment.purpose}</p>
+            <p>Cena: ${purposeInfo.price}</p>
             
-            <button onclick="removeAppointment(${index})">Usuń wizytę</button>
+            <button class="button" onclick="removeAppointment(${index})">Anuluj rezerwację wizyty</button>
           </br>
         `;
         appointmentsContainer.appendChild(appointmentDiv);
@@ -131,28 +134,12 @@ function removeAppointment(index) {
     // Zapisz zaktualizowaną listę w Local Storage
     localStorage.setItem('appointments', JSON.stringify(appointmentsList));
 
-    // Usuń istniejące elementy z kontenera
-    appointmentsContainer.innerHTML = '';
-
-    // Wyświetl zaktualizowane wizyty
+    // Sprawdź, czy istnieją wizyty
     if (appointmentsList.length > 0) {
-        appointmentsList.forEach(function (appointment, index) {
-            var doctorInfo = doctorsInfo[doctorId] || { name: "Brak danych", specialization: "Brak danych" };
-
-            var appointmentDiv = document.createElement('div');
-            appointmentDiv.innerHTML = `
-                <p>Lekarz: ${doctorInfo.name}</p>
-                <p>Specjalizacja: ${doctorInfo.specialization}</p>
-                <p>Data: ${appointment.date}</p>
-                <p>Godzina: ${appointment.time}</p>          
-                <button onclick="removeAppointment(${index})">Usuń wizytę</button>
-                <hr>
-        
-            `;
-            appointmentsContainer.appendChild(appointmentDiv);
-        });
+        // Usuń istniejący element z kontenera
+        appointmentsContainer.removeChild(appointmentsContainer.childNodes[index - 1]);
     } else {
-        // Wyświetl komunikat, gdy brak wizyt
+        // Jeśli nie ma żadnych pozostałych wizyt, wyświetl komunikat
         appointmentsContainer.innerHTML = '<p>Brak zaplanowanych wizyt.</p>';
     }
 }
