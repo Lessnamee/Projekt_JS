@@ -25,7 +25,11 @@
             </div>
         </div>
     </header>
-
+<style>
+  h4 {
+    color:#582cb0;
+  }
+</style>
     <nav>
         <ul>
             <li><a href="lekarze.html">Nasi lekarze</a></li>
@@ -82,7 +86,7 @@
             </div>
           </td>
           <td class="day" id="lekarzCell"><span class="number">5</span></span>
-            <div class="event" onclick="window.location.href='lekarz1.html'">
+            <div class="event" onclick="handleCalendarClick('5', '12', '2023', '10:15')">
                 Jan Kowalski 
               </br>
                 10:15
@@ -193,7 +197,6 @@
 
     <form id="appointmentForm">
     </br>
-    <input type="hidden" id="doctor" value="lekarz1">
       <label for="appointmentDate">Data wizyty:</label>
       <input type="date" id="appointmentDate" required>
       <label for="appointmentTime">Godzina wizyty:</label>
@@ -220,18 +223,46 @@
             <li>Choroba - 120 zł</li>
             <li>Wypisanie recepty - 40 zł</li>
             <li>Szczepienie - 60 zł</li>
+        </br>
+        <h4>*Płatność tylko w placówce!<h4>
         </ul>
     </div>
   </center> 
 </br>
 <footer>
   <small>
-    Copyright © 2023 Patryja Oświęcimska, Kinga Spytkowska All Rights Reserved.
+    Copyright © 2023 Patryja Oświęcimska, Kinga Spytkowska
   </small>
 </footer>
 </body>
     <script>
+      function handleCalendarClick(day, month, year, time) {
+        // Ustaw wartości w formularzu
+        var formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+        document.getElementById('appointmentDate').value = formattedDate; // Ustaw pełną datę
+        document.getElementById('appointmentTime').value = time; // Ustaw godzinę
 
+        // Przykład: Ustaw domyślny opis wizyty
+        document.getElementById('purpose-list').value = 'wizyta-kontrolna'; }
+
+      function saveAppointment() {
+        var appointment = {
+            date: document.getElementById('appointmentDate').value,
+            time: document.getElementById('appointmentTime').value,
+            purpose: document.getElementById('purpose-list').value
+        };
+
+        // Pobierz aktualną listę wizyt z Local Storage lub utwórz nową, jeśli nie istnieje
+        var appointmentsList = JSON.parse(localStorage.getItem('appointments')) || [];
+        
+        // Dodaj nową wizytę do listy
+        appointmentsList.push(appointment);
+
+        // Zapisz listę wizyt z powrotem do Local Storage
+        localStorage.setItem('appointments', JSON.stringify(appointmentsList));
+
+        // Przenieś użytkownika na stronę "rezerwacja.html"
+        window.location.href = 'rezerwacja.html';}
       var doctorId = "lekarz1"; 
       localStorage.setItem("lekarz1", doctorId);
     </script>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wizyta u lekarza</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/calendar.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js"></script>
 
@@ -32,49 +33,223 @@
             <li><a href="kalendarz.html">Kalendarz</a></li>
         </ul>
     </nav>
-    <h1>Rezerwacja wizyty</h1>
+    <center><h1>Rezerwacja wizyty</h1>
 
     <div class="doctors" id="doctor-details">
         <div class="this-doctor">
-        <img class="doctor-image" src="img/lek4.jpg" alt="Dr. Piotr Nowak">
-        <h3>Dr. Piotr Nowak</h3>
-        <p>Lekarz rodzinny</p>
+        <img class="doctor-image" src="img/lek2.jpg" alt="Dr. Piotr Nowak">
+        <h3>Dr. Anna Nowak</h3>
+        <p>Pediatra</p>
         </div>
     </div>
+</center>
+<h1>Rezerwacja wizyty</h1>
 
-    <div id="appointment-calendar">
-        <h2>Wybierz termin wizyty:</h2>
-        <div id="calendar"></div>
-    </div>
+</br>
+<center><h3>Grudzień 2023</h3></center>
+  <center>  <table id="calendar">
+    <tr>
+      <th class="day-name">Poniedziałek</th>
+      <th class="day-name">Wtorek</th>
+      <th class="day-name">Środa</th>
+      <th class="day-name">Czwartek</th>
+      <th class="day-name">Piątek</th>
+      <th class="day-name">Sobota</th>
+      <th class="day-name">Niedziela</th>
+    </tr>
+    <tr>
+      <td class="other_month"><span class="number">27</span></td>
+      <td class="other_month"><span class="number">28</span>
+       
+        </td>
+      <td class="other_month"><span class="number">29</span></td>
+      <td class="day today">
+        <span class="number">30</span>
+         
+      </td>
+      <td class="day"><span class="number">1</span> 
+     </td>         
+      <td class="weekend"><span class="number">2</span></span></td>
+      <td class="weekend"><span class="number" >3</span></span></td>
+    </tr>
+    <tr>
+      <td class="niedostepne">
+        <span class="number">4</span>
+        <div class="popup" onclick="brak()">
+          Brak terminów
+          <span class="popuptext" id="myPopup">Brak terminów w danym dniu, proszę wybrać inny dzień.</span>
+        </div>
+      </td>
+      <td class="day" id="lekarzCell"><span class="number">5</span></span>
+        <div class="event" onclick="window.location.href='lekarz1.html'">
+            Jan Kowalski 
+          </br>
+            10:15
+          </br>
+            10:30
+          </div>
+         </td>
+      <td class="day"><span class="number">6</span>
+        </td>
+      <td class="day"><span class="number">7</span>
+  </td>
+      <td class="niedostepne"><span class="number">8</span>
+        
+  </td>
+      <td class="weekend"><span class="number">9</span>
+      
+      </td>
+      <td class="weekend"><span class="number">10</span></td>
+    </tr>
+    <tr>
+      <td class="day"><span class="number">11</span>
+        <div class="event" onclick="window.location.href='lekarz1.html'">
+          Jan Kowalski 
+        </br>
+          8:15
+        </br>
+          11:30
+        </div></td>
+      <td class="day"><span class="number">12</span>
+        <div class="popup" onclick="brak1()">
+          Brak terminów
+          <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+        </div>
+      </td>
+      <td class="day"><span class="number">13</span></span>
+        
+      </td>
+      <td class="day"><span class="number">14</span></span>
+        </td>
+      <td class="day"><span class="number">15</span>
+       </td>
+      <td class="weekend"><span class="number">16</span></td>
+      <td class="weekend"><span class="number">17</span></td>
+    </tr>
+    <tr>
+      <td class="day"><span class="number">18</span>
+        <div class="event" onclick="window.location.href='lekarz1.html'">
+          Jan Kowalski 
+        </br>
+          10:15
+        </br>
+          10:30
+        </div></td>
+      <td class="day"><span class="number">19</span><div class="popup" onclick="brak1()">
+        Brak terminów
+        <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+      </div>
+       </td>
+      <td class="day"><span class="number">20</span>
+        
+  </td>
+      <td class="day"><span class="number">21</span>
+       </td>
+      <td class="day"><span class="number">22</span>
+        </td>
+      
+      <td class="weekend"><span class="number">23</span></td>
+      <td class="weekend"><span class="number">24</span></td>
+    </tr>
+    <tr>
+      <td class="day"><span class="number">25</span>
+        <div class="event" onclick="window.location.href='lekarz1.html'">
+          Jan Kowalski <br>
+          8:00<br>
+          8:15<br>
+          8:30<br>
+          8:45<br>
+          9:00<br>
+          9:15<br>
+          9:30<br>
+          9:45<br>
+
+        </div>
+      </td>
+      <td class="day"><span class="number">26</span>
+        <div class="event" onclick="window.location.href='lekarz1.html'">
+          Jan Kowalski 
+        </br>
+          8:00
+        </br>
+          10:15
+        </br>
+      13:45
+        </div>
+       </td>
+      <td class="day"><span class="number">27</span>
+        
+    </td>
+    <td class="day"><span class="number">28</span></td>
+    <td class="da"><span class="number">29</span></td>
+    <td class="weekend"><span class="number">30</span></td>
+    <td class="weekend"><span class="number">31</span></td>
+    </tr>
+   
+  </table>
+</br>
+  <center><h3>Podaj termin i rodzaj wizyty:</h3></center>
+
+<form id="appointmentForm">
+</br>
+  <label for="appointmentDate">Data wizyty:</label>
+  <input type="date" id="appointmentDate" required>
+  <label for="appointmentTime">Godzina wizyty:</label>
+  <input type="time" id="appointmentTime" step=900 min="08:00" max="17:00" required>
+  <label for="appointmentDescription">Opis wizyty:</label>
+  <select id="purpose-list">
+    <option value="wizyta-kontrolna">Wizyta kontrolna</option>
+    <option value="konsultacja">Konsultacja</option>
+    <option value="choroba">Choroba</option>
+    <option value="wypisanie-recepty">Wypisanie recepty</option>
+    <option value="szczepienie">Szczepienie</option>
+</select>
+  <button type="button"  onclick="saveAppointment()">Dodaj wizytę</button>
+</form>
 
 
-    <div id="appointment-purpose">
-        <h2>Wybierz cel wizyty:</h2>
-        <select id="purpose-list">
-            <option value="wizyta-kontrolna">Wizyta kontrolna</option>
-            <option value="konsultacja">Konsultacja</option>
-            <option value="choroba">Choroba</option>
-            <option value="wypisanie-recepty">Wypisanie recepty</option>
-            <option value="szczepienie">Szczepienie</option>
-        </select>
-    </div>
 
-    <div id="service-prices">
-        <h2>Cennik usług:</h2>
-        <ul>
-            <li>Wizyta kontrolna - 100 zł</li>
-            <li>Konsultacja - 80 zł</li>
-            <li>Choroba - 120 zł</li>
-            <li>Wypisanie recepty - 40 zł</li>
-            <li>Szczepienie - 60 zł</li>
-        </ul>
-    </div>
 
-    <div id="umow-button">
-        <a href="umow-wizyte.html" class="appointment-button">Umów</a>
-    </div>
+<div id="service-prices">
+    <h2>Cennik usług:</h2>
+    <ul>
+        <li>Wizyta kontrolna - 100 zł</li>
+        <li>Konsultacja - 80 zł</li>
+        <li>Choroba - 120 zł</li>
+        <li>Wypisanie recepty - 40 zł</li>
+        <li>Szczepienie - 60 zł</li>
+    </ul>
+</div>
+</center> 
+</br>
+<footer>
+<small>
+Copyright © 2023 Patryja Oświęcimska, Kinga Spytkowska
+</small>
+</footer>
+</body>
+<script>
+  function saveAppointment() {
+    var appointment = {
+        date: document.getElementById('appointmentDate').value,
+        time: document.getElementById('appointmentTime').value,
+        purpose: document.getElementById('purpose-list').value
+    };
+
+    // Pobierz aktualną listę wizyt z Local Storage lub utwórz nową, jeśli nie istnieje
+    var appointmentsList = JSON.parse(localStorage.getItem('appointments')) || [];
     
-    <script src="lekarz-info.js"></script>
+    // Dodaj nową wizytę do listy
+    appointmentsList.push(appointment);
+
+    // Zapisz listę wizyt z powrotem do Local Storage
+    localStorage.setItem('appointments', JSON.stringify(appointmentsList));
+
+    // Przenieś użytkownika na stronę "rezerwacja.html"
+    window.location.href = 'rezerwacja.html';}
+  var doctorId = "lekarz2"; 
+  localStorage.setItem("lekarz2", doctorId);
+</script>
 </body>
 
 </html>

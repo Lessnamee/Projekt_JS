@@ -9,29 +9,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js"></script>
     <style>
+      #appointmentsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: 1px solid #ccc;
+        margin: 10px;
+        width: 300px;
+        background-color: rgba(186, 226, 227, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
         
-        body {
-          font-family: Arial, sans-serif;
-        }
+    }
+
+
+    .appointment-info {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .delete-button {
+        background-color: #ff6666;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
     
-        .appointment-container {
-          border: 1px solid #ccc;
-          padding: 10px;
-          margin: 10px;
-          max-width: 300px;
-        }
-    
-        .appointment-info {
-          margin-bottom: 8px;
-        }
-    
-        .delete-button {
-          background-color: #ff6666;
-          color: white;
-          border: none;
-          padding: 5px 10px;
-          cursor: pointer;
-        }
       </style>
 
 </head>
@@ -64,74 +69,87 @@
 </head>
 <body>
 <h2>Lista zarezerwowanych wizyt:</h2>
-<center><div id="appointmentContainer">
-  <!-- Kontener dla danych o wizycie -->
-</div></center>
-
+<center><div id="appointmentsContainer"></div></center>
+<footer>
+  <small>
+    Copyright © 2023 Patryja Oświęcimska, Kinga Spytkowska
+  </small>
+</footer>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Sprawdź, czy dane rezerwacji są dostępne w Local Storage
-    if (localStorage.getItem("appointment")) {
-      // Pobierz dane z Local Storage
-      var jsonData = localStorage.getItem("appointment");
+  
+// Pobierz listę wizyt z Local Storage
+var appointmentsList = JSON.parse(localStorage.getItem('appointments')) || [];
 
-      // Parsuj dane JSON
-      var appointmentData = JSON.parse(jsonData);
+// Pobierz doctorId z Local Storage
+var doctorId = localStorage.getItem('doctorId') || "lekarz1";
 
-      // Wyświetl dane na stronie
-      displayAppointmentData(appointmentData);
-    }
-  });
+// Obiekt z informacjami o lekarzach
+var doctorsInfo = {
+    lekarz1: { name: "Jan Kowalski", specialization: "Pediatra" },
+    lekarz2: { name: "Anna Nowak", specialization: "Pediatra" },
+    lekarz3: { name: "Maria Wiśniewska", specialization: "Lekarz rodzinny" },
+    lekarz4: { name: "Piotr Nowak", specialization: "Lekarz rodzinny" }
+};
 
-  function displayAppointmentData(data) {
-    // Uzyskaj dostęp do kontenera HTML
-    var container = document.getElementById("appointmentContainer");
+// Wybierz kontener, w którym będą wyświetlane wizyty
+var appointmentsContainer = document.getElementById('appointmentsContainer');
 
-    // Utwórz kontener dla danych o wizycie
-    var appointmentContainer = document.createElement("div");
-    appointmentContainer.classList.add("appointment-container");
+// Sprawdź, czy istnieją wizyty w Local Storage
+if (appointmentsList.length > 0) {
+    // Wyświetl każdą wizytę w kontenerze
+    appointmentsList.forEach(function (appointment, index) {
+        var doctorInfo = doctorsInfo[doctorId] || { name: "Brak danych", specialization: "Brak danych" };
 
-    // Dodaj informacje o wizycie do kontenera
-    var dateElement = createAppointmentInfo("Data wizyty: " + data.date);
-    var timeElement = createAppointmentInfo("Godzina wizyty: " + data.time);
-    var purposeElement = createAppointmentInfo("Rodzaj wizyty: " + data.purpose);
-
-    // Dodaj przycisk usuwania
-    var deleteButton = createDeleteButton(appointmentContainer);
-
-    // Dodaj elementy do kontenera
-    appointmentContainer.appendChild(dateElement);
-    appointmentContainer.appendChild(timeElement);
-    appointmentContainer.appendChild(purposeElement);
-    appointmentContainer.appendChild(deleteButton);
-
-    // Dodaj kontener do głównego kontenera na stronie
-    container.appendChild(appointmentContainer);
-  }
-
-  function createAppointmentInfo(text) {
-    var element = document.createElement("p");
-    element.classList.add("appointment-info");
-    element.textContent = text;
-    return element;
-  }
-
-  function createDeleteButton(container) {
-    var button = document.createElement("button");
-    button.classList.add("delete-button");
-    button.textContent = "Usuń rezerwację";
-
-    // Dodaj obsługę kliknięcia na przycisku usuwania
-    button.addEventListener("click", function() {
-      // Usuń dane z Local Storage
-      localStorage.removeItem("appointment");
-
-      // Usuń kontener z danymi o wizycie
-      container.remove();
+        var appointmentDiv = document.createElement('div');
+        appointmentDiv.innerHTML = `
+            <p>Lekarz: ${doctorInfo.name}</p>
+            <p>Specjalizacja: ${doctorInfo.specialization}</p>
+            <p>Data: ${appointment.date}</p>
+            <p>Godzina: ${appointment.time}</p>
+            
+            <button onclick="removeAppointment(${index})">Usuń wizytę</button>
+          </br>
+        `;
+        appointmentsContainer.appendChild(appointmentDiv);
     });
+} else {
+    // Wyświetl komunikat, gdy brak wizyt
+    appointmentsContainer.innerHTML = '<p>Brak zaplanowanych wizyt.</p>';
+}
 
-    return button;
-  }
+// Funkcja do usuwania wizyty
+function removeAppointment(index) {
+    // Usuń wizytę z listy
+    appointmentsList.splice(index, 1);
+
+    // Zapisz zaktualizowaną listę w Local Storage
+    localStorage.setItem('appointments', JSON.stringify(appointmentsList));
+
+    // Usuń istniejące elementy z kontenera
+    appointmentsContainer.innerHTML = '';
+
+    // Wyświetl zaktualizowane wizyty
+    if (appointmentsList.length > 0) {
+        appointmentsList.forEach(function (appointment, index) {
+            var doctorInfo = doctorsInfo[doctorId] || { name: "Brak danych", specialization: "Brak danych" };
+
+            var appointmentDiv = document.createElement('div');
+            appointmentDiv.innerHTML = `
+                <p>Lekarz: ${doctorInfo.name}</p>
+                <p>Specjalizacja: ${doctorInfo.specialization}</p>
+                <p>Data: ${appointment.date}</p>
+                <p>Godzina: ${appointment.time}</p>          
+                <button onclick="removeAppointment(${index})">Usuń wizytę</button>
+                <hr>
+        
+            `;
+            appointmentsContainer.appendChild(appointmentDiv);
+        });
+    } else {
+        // Wyświetl komunikat, gdy brak wizyt
+        appointmentsContainer.innerHTML = '<p>Brak zaplanowanych wizyt.</p>';
+    }
+}
 </script>
 
 </body>
