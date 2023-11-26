@@ -10,7 +10,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
-
+<script src="calendar.js"></script>
 </head>
 <body>
     <header>
@@ -53,105 +53,254 @@
           <td class="other_month"><span class="number">28</span>
            
             </td>
-          <td class="other_month" id="lekarzCell"><span class="number">29</span><div class="event" "lekarz1">
-            <div class="event-desc">
-              Janusz Kowalski 
-            </div>
-            <div class="event-time">
-              10:15
-            </br>
-              10:30
-          </br>
-              11:45
-            </div>
-        </div></td>
-          <td class="day today" id="lekarzCell"><span class="number">30</span><div class="event" id="lekarz3">
-            <div class="event-desc">
-              Maria Wiśniewska
-            </div>
-            <div class="event-time">
-              9:30
-            </br>
-              10:30
-          </br>
-            12:30
-            </br>
-            14:00
-            </div>
-        </div></td>
-          <td class="day" id="lekarzCell" ><span class="number">1</span> <div class="event" id="lekarz4">
-            <div class="event-desc" >
-              Piotr Kowalski 
-            </div>
-            <div class="event-time">
-              10:15
-            </br>
-              10:30
-          </br>
-              11:45
-            </div>
-        </div>
-        <div class="event" id="lekarz2">
-            <div class="event-desc">
-                Anna Nowak
+          <td class="other_month"><span class="number">29</span></td>
+          <td class="day today">
+            <span class="number">30</span>
+              <div class="event" onclick="window.location.href='lekarz4.html'">
+                Maria Wiśniewska
+                </br>
+                10:30
+                </br>
+                12:30
+                </br>
+                14:00
               </div>
-              <div class="event-time">
-                8:00
-              </div>
-            </div></td>
-         
-          <td class="weekend"><span class="number">5</span></span></td>
-          <td class="weekend"><span class="number" >6</span></span></td>
-        </tr>
-        <tr>
-          <td id="niedostepne" class="niedostepne"><span class="number">7</span>
-            <div class="unav">
-            Brak Terminów
+          </td>
+          <td class="day"><span class="number">1</span> 
+            <div class="event"onclick="window.location.href='lekarz2.html'">
+              Anna Nowak
+            </br>
+              8:00
           </div>
-            </td>
-          <td class="day"><span class="number">8</span></span></td>
-          <td class="day"><span class="number">9</span></td>
-          <td class="day"><span class="number">10</span></td>
-          <td class="day"><span class="number">11</span></td>
-          <td class="weekend"><span class="number">12</span></td>
-          <td class="weekend"><span class="number">13</span></td>
+              <div class="event" onclick="window.location.href='lekarz4.html'">
+              Piotr Nowak
+            </br>
+              10:15
+            </br>
+              10:30
+          </br>
+              11:45
+            </div></td>         
+          <td class="weekend"><span class="number">2</span></span></td>
+          <td class="weekend"><span class="number" >3</span></span></td>
         </tr>
         <tr>
-          <td class="day"><span class="number">14</span></td>
-          <td class="day"><span class="number">15</span></td>
-          <td class="day"><span class="number">16</span></span></td>
-          <td class="day"><span class="number">17</span></span></td>
-          <td class="day"><span class="number">18</span></td>
-          <td class="weekend"><span class="number">19</span></td>
-          <td class="weekend"><span class="number">20</span></td>
-        </tr>
-        <tr>
-          <td class="day"><span class="number">21</span></td>
-          <td class="day"><span class="number">22</span></td>
-          <td class="day"><span class="number">23</span></td>
-          <td class="day"><span class="number">24</span></td>
-          <td class="day"><span class="number">25</span></td>
-          <td class="weekend"><span class="number">26</span></td>
-          <td class="weekend"><span class="number">27</span></td>
-        </tr>
-        <tr>
-          <td class="day"><span class="number">28</span></td>
-          <td class="day"><span class="number">29</span></td>
-          <td class="day"><span class="number">30</span></td>
-          <td class="day"><span class="number">1</span></td>
-          <td class="day"><span class="number">2</span></td>
-          <td class="weekend"><span class="number">3</span></td>
-          <td class="weekend"><span class="number">4</span></td>
-        </tr>
-        <tr>
-          <td class="day"><span class="number">5</span></td>
-          <td class="day"><span class="number">6</span></span></td>
-          <td class="day"><span class="number">7</span></td>
-          <td class="day"><span class="number">8</span></td>
-          <td class="day"><span class="number">9</span></td>
+          <td class="niedostepne">
+            <span class="number">4</span>
+            <div class="popup" onclick="brak()">
+              Brak terminów
+              <span class="popuptext" id="myPopup">Brak terminów w danym dniu, proszę wybrać inny dzień.</span>
+            </div>
+          </td>
+          <td class="day" id="lekarzCell"><span class="number">5</span></span>
+            <div class="event" onclick="window.location.href='lekarz1.html'">
+                Jan Kowalski 
+              </br>
+                10:15
+              </br>
+                10:30
+              </div>
+              <div class="event" onclick="window.location.href='lekarz4.html'">
+                Piotr Nowak
+              </br>
+                11:15
+              </br>
+                13:30
+            </br>
+                14:45
+          </div></td>
+          <td class="day"><span class="number">6</span>
+            <div class="event" onclick="window.location.href='lekarz3.html'">
+              Anna Nowak
+            </br>
+              13:15
+            </br>
+              14:45
+          </br>
+              15:00
+        </div></td>
+          <td class="day"><span class="number">7</span>
+            <div class="event" onclick="window.location.href='lekarz3.html'">
+              Maria Wiśniewska
+            </br>
+              11:15
+        </div>
+        <div class="event" onclick="window.location.href='lekarz1.html'">
+          Piotr Nowak
+        </br>
+          15:15
+    </div>
+      
+      </td>
+          <td class="niedostepne"><span class="number">8</span>
+            <div class="popup" onclick="brak1()">
+              Brak terminów
+              <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+            </div>
+      </td>
+          <td class="weekend"><span class="number">9</span>
+          
+          </td>
           <td class="weekend"><span class="number">10</span></td>
-          <td class="weekend"><span class="number">11</span></td>
         </tr>
+        <tr>
+          <td class="day"><span class="number">11</span>
+            <div class="event" onclick="window.location.href='lekarz1.html'">
+              Jan Kowalski 
+            </br>
+              8:15
+            </br>
+              11:30
+            </div></td>
+          <td class="day"><span class="number">12</span>
+            <div class="popup" onclick="brak1()">
+              Brak terminów
+              <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+            </div>
+          </td>
+          <td class="day"><span class="number">13</span></span>
+            <div class="popup" onclick="brak1()">
+              Brak terminów
+              <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+            </div>
+          </td>
+          <td class="day"><span class="number">14</span></span>
+            <div class="event" onclick="window.location.href='lekarz4.html'">
+              Maria Wiśniewska
+              </br>
+              8:30
+              </br>
+              11:30
+              </br>
+              13:00
+            </div></td>
+          <td class="day"><span class="number">15</span>
+            <div class="event" onclick="window.location.href='lekarz3.html'">
+              Anna Nowak
+            </br>
+              15:15
+            
+        </div></td>
+          <td class="weekend"><span class="number">16</span></td>
+          <td class="weekend"><span class="number">17</span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number">18</span>
+            <div class="event" onclick="window.location.href='lekarz1.html'">
+              Jan Kowalski 
+            </br>
+              10:15
+            </br>
+              10:30
+            </div></td>
+          <td class="day"><span class="number">19</span>
+            <div class="event" onclick="window.location.href='lekarz4.html'">
+              Piotr Nowak
+            </br>
+              11:15
+            </br>
+              11:30
+          </br>
+              11:45
+            </div></td>
+          <td class="day"><span class="number">20</span>
+            <div class="event" onclick="window.location.href='lekarz3.html'">
+              Maria Wiśniewska
+            </br>
+              11:15
+        </div>
+        <div class="event" onclick="window.location.href='lekarz3.html'">
+          Anna Nowak
+        </br>
+          13:15
+        </br>
+          14:45
+      </br>
+          15:00
+    </div></td>
+          <td class="day"><span class="number">21</span>
+            <div class="popup" onclick="brak1()">
+              Brak terminów
+              <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+            </div></td>
+          <td class="day"><span class="number">22</span>
+            <div class="event" onclick="window.location.href='lekarz3.html'">
+              Anna Nowak
+            </br>
+              13:15
+            </br>
+              14:45
+          </br>
+              15:00
+        </div></td>
+          
+          <td class="weekend"><span class="number">23</span></td>
+          <td class="weekend"><span class="number">24</span></td>
+        </tr>
+        <tr>
+          <td class="day"><span class="number">25</span>
+            <div class="event" onclick="window.location.href='lekarz1.html'">
+              Jan Kowalski 
+            </br>
+              8:00
+            </br>
+              8:15
+            </br>
+            .
+          </br>
+            .
+          </br>
+          15:45
+            </div>
+          </td>
+          <td class="day"><span class="number">26</span>
+            <div class="event" onclick="window.location.href='lekarz1.html'">
+              Jan Kowalski 
+            </br>
+              8:00
+            </br>
+              10:15
+            </br>
+          13:45
+            </div>
+            <div class="event" onclick="window.location.href='lekarz4.html'">
+              Piotr Nowak
+            </br>
+              11:15
+            </br>
+              11:30
+          </br>
+              11:45
+            </div></td>
+          <td class="day"><span class="number">27</span>
+            <div class="event" onclick="window.location.href='lekarz3.html'">
+              Maria Wiśniewska
+            </br>
+              11:15
+            </br>
+            14:45
+        </br>
+            15:00
+        </div>
+        <div class="event" onclick="window.location.href='lekarz3.html'">
+          Anna Nowak
+        </br>
+          13:15
+        </br>
+          14:45
+      </br>
+          15:00
+        </br>
+        15:15
+    </br>
+        15:30
+    </div></td>
+          <td class="day"><span class="number">28</span></td>
+          <td class="da"><span class="number">29</span></td>
+          <td class="weekend"><span class="number">30</span></td>
+          <td class="weekend"><span class="number">31</span></td>
+        </tr>
+       
       </table>
     </center> 
   

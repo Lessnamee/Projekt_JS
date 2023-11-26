@@ -32,7 +32,9 @@ header {
     text-align: center;
     padding: 20px 0;
 }
-
+.appointmentForm{
+    font-size: 19px;
+}
 .header-content {
     display: flex;
     align-items: center;
@@ -41,6 +43,7 @@ header {
 
 .clinic-logo img {
     max-width: 100px;
+    max-height: 80px;
     /* Dostosuj szerokość loga według potrzeb */
 }
 
@@ -95,7 +98,7 @@ nav ul li a {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 25px;
     margin: 10px 0;
     color: #333;
 }

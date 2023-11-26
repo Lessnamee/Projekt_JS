@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wizyta u lekarza</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/calendar.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js"></script>
+    
+    <script src="calendar.js"></script>
 
 </head>
 
@@ -34,18 +36,190 @@
     </nav>
     <h1>Rezerwacja wizyty</h1>
 
-    <div class="doctors" id="doctor-details">
+   <center> <div class="doctors" id="doctor-details">
         <div class="this-doctor">
         <img class="doctor-image" src="img/lek4.jpg" alt="Dr. Piotr Nowak">
         <h3>Dr. Piotr Nowak</h3>
         <p>Lekarz rodzinny</p>
+        <p>Dni pracy: wtorki, czwartki, piątki</p>
         </div>
     </div>
+<h2>Wybierz termin wizyty:</h2>
+<center><h3>Grudzień 2023</h3></center>
+  <table id="calendar">
+    <tr>
+      <th class="day-name">Poniedziałek</th>
+      <th class="day-name">Wtorek</th>
+      <th class="day-name">Środa</th>
+      <th class="day-name">Czwartek</th>
+      <th class="day-name">Piątek</th>
+      <th class="day-name">Sobota</th>
+      <th class="day-name">Niedziela</th>
+    </tr>
+    <tr>
+      <td class="other_month"><span class="number">27</span></td>
+      <td class="other_month"><span class="number">28</span>
+       
+        </td>
+      <td class="other_month"><span class="number">29</span></td>
+      <td class="day today">
+        <span class="number">30</span>
 
-    <div id="appointment-calendar">
-        <h2>Wybierz termin wizyty:</h2>
-        <div id="calendar"></div>
-    </div>
+      </td>
+      <td class="day"><span class="number">1</span> 
+          <div class="event" onclick="window.location.href='lekarz4.html'">
+          Piotr Nowak
+        </br>
+          10:15
+        </br>
+          10:30
+      </br>
+          11:45
+        </div></td>         
+      <td class="weekend"><span class="number">2</span></span></td>
+      <td class="weekend"><span class="number" >3</span></span></td>
+    </tr>
+    <tr>
+      <td class="niedostepne">
+        <span class="number">4</span>
+
+      </td>
+      <td class="day" id="lekarzCell"><span class="number">5</span></span>
+          <div class="event" onclick="window.location.href='lekarz4.html'">
+            Piotr Nowak
+          </br>
+            11:15
+          </br>
+            13:30
+        </br>
+            14:45
+      </div></td>
+      <td class="day"><span class="number">6</span>
+</td>
+      <td class="day"><span class="number">7</span>
+
+    <div class="event" onclick="window.location.href='lekarz1.html'">
+      Piotr Nowak
+    </br>
+      15:15
+</div>
+  
+  </td>
+      <td class="niedostepne"><span class="number">8</span>
+        <div class="popup" onclick="brak1()">
+            Brak terminów
+            <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+          </div>
+  </td>
+      <td class="weekend"><span class="number">9</span>
+      
+      </td>
+      <td class="weekend"><span class="number">10</span></td>
+    </tr>
+    <tr>
+      <td class="day"><span class="number">11</span>
+</td>
+      <td class="day"><span class="number">12</span>
+        <div class="popup" onclick="brak1()">
+          Brak terminów
+          <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+        </div>
+      </td>
+      <td class="day"><span class="number">13</span></span>
+        
+      </td>
+      <td class="day"><span class="number">14</span>
+        <div class="popup" onclick="brak1()">
+            Brak terminów
+            <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+          </div></span>
+</td>
+      <td class="day"><span class="number">15</span>
+        <div class="popup" onclick="brak1()">
+            Brak terminów
+            <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+          </div>
+</td>
+      <td class="weekend"><span class="number">16</span></td>
+      <td class="weekend"><span class="number">17</span></td>
+    </tr>
+    <tr>
+      <td class="day"><span class="number">18</span>
+</td>
+      <td class="day"><span class="number">19</span>
+        <div class="event" onclick="window.location.href='lekarz4.html'">
+          Piotr Nowak
+        </br>
+          11:15
+        </br>
+          11:30
+      </br>
+          11:45
+        </div></td>
+      <td class="day"><span class="number">20</span>
+        </td>
+      <td class="day"><span class="number">21</span>
+        <div class="popup" onclick="brak1()">
+          Brak terminów
+          <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+        </div></td>
+      <td class="day"><span class="number">22</span>
+        <div class="popup" onclick="brak1()">
+            Brak terminów
+            <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+          </div>
+</td>
+      
+      <td class="weekend"><span class="number">23</span></td>
+      <td class="weekend"><span class="number">24</span></td>
+    </tr>
+    <tr>
+      <td class="day"><span class="number">25</span>
+
+      </td>
+      <td class="day"><span class="number">26</span>
+        
+        <div class="event" onclick="window.location.href='lekarz4.html'">
+          Piotr Nowak
+        </br>
+          11:15
+        </br>
+          11:30
+      </br>
+          11:45
+        </div></td>
+      <td class="day"><span class="number">27</span>
+</td>
+      <td class="day"><span class="number">28</span>
+        <div class="event" onclick="window.location.href='lekarz4.html'">
+            Piotr Nowak
+          </br>
+            11:15
+          </br>
+            11:30
+        </br>
+            11:45
+        </br>
+        12:30
+    </br>
+        13:45
+          </div>
+    </td>
+      <td class="da"><span class="number">29</span>
+        <div class="event" onclick="window.location.href='lekarz4.html'">
+            Piotr Nowak
+          </br>
+            8:15
+          </br>
+
+            11:15
+          </div>
+    </td>
+      <td class="weekend"><span class="number">30</span></td>
+      <td class="weekend"><span class="number">31</span></td>
+    </tr>
+   
+  </table>
 
 
     <div id="appointment-purpose">
@@ -58,7 +232,7 @@
             <option value="szczepienie">Szczepienie</option>
         </select>
     </div>
-
+</center> 
     <div id="service-prices">
         <h2>Cennik usług:</h2>
         <ul>
@@ -74,7 +248,7 @@
         <a href="umow-wizyte.html" class="appointment-button">Umów</a>
     </div>
     
-    <script src="lekarz-info.js"></script>
+    <script src="calendar.js"></script>
 </body>
 
 </html>

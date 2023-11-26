@@ -3,21 +3,21 @@ const doctors = [
         name: "Dr. Jan Kowalski",
         specialization: "Pediatra",
         image: "img/lek1.jpg",
-        availableDates: ["2023-11-01", "2023-11-05", "2023-11-10"],
+        availableDates: ["poniedziałki 8:00-16:00", "wtorki 8:00-11:00"],
         profileLink: "lekarz1.html"
     },
     {
         name: "Dr. Anna Nowak",
         specialization: "Pediatra",
         image: "img/lek2.jpg",
-        availableDates: ["2023-11-02", "2023-11-06", "2023-11-11"],
+        availableDates: ["środy 13:00-17:00", "piątki 8:00-13:00"],
         profileLink: "lekarz2.html"
     },
     {
         name: "Dr. Maria Wiśniewska",
         specialization: "Lekarz Rodzinny",
         image: "img/lek3.jpg",
-        availableDates: ["2023-11-03", "2023-11-07", "2023-11-12"],
+        availableDates: ["środy 8:00-13:00","czwartki 8:00-16:00"],
         profileLink: "lekarz3.html"
 
     },
@@ -25,7 +25,7 @@ const doctors = [
         name: "Dr. Piotr Nowak",
         specialization: "Lekarz Rodzinny",
         image: "img/lek4.jpg",
-        availableDates: ["2023-11-04", "2023-11-08", "2023-11-13"],
+        availableDates: ["wtorki 10:00-16:00","czwartki: 13:00-17:00","piątki: 8:00-13:00"],
         profileLink: "lekarz4.html"
 
     }
@@ -53,7 +53,7 @@ function renderDoctorCards() {
         specialization.textContent = doctor.specialization;
 
         const availability = document.createElement("p");
-        availability.textContent = "Dostępne terminy w tym tygodniu: " + doctor.availableDates.join(", ");
+        availability.textContent = "Dni pracy: " + doctor.availableDates.join(", ");
 
         card.appendChild(imageLink);
         card.appendChild(name);
