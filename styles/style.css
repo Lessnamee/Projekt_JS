@@ -20,7 +20,7 @@ h1 {
     text-align: center;
     margin-top: 20px;
     font-size: 24px;
-    color: #0d3f44;
+    color: #044f63;
 }
 
 h2 {
@@ -30,7 +30,7 @@ h2 {
 }
 
 header {
-    background-color: #96dee6;
+    background-color: #a5c5cf;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -46,7 +46,7 @@ header {
 
 .clinic-logo img {
     max-width: 100px;
-    max-height: 80px;
+    max-height: 150px;
 
 }
 
@@ -59,10 +59,47 @@ header {
 nav ul {
     list-style-type: none;
     text-align: left;
-    background-color: #20818b;
+    background-color: #044f63;
     padding: 10px;
 }
+.button {
+    background-image: linear-gradient(#044f63, #74858a);
+    border: 1px solid #cbd2d4;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    direction: ltr;
+    display: block;
+    font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47059;
+    min-width: 30px;
+    overflow: visible;
+    padding: 4px 15px;
+    text-align: center;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
 
+  .starButton:before {
+    content: '\2605'; /* Unicode character for a solid star */
+    font-size: 24px;
+    color: #ffcc00;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .star-button:hover {
+    background-color: #2980b9;
+  }
 nav ul li {
     display: inline;
     margin-right: 20px;
@@ -115,7 +152,7 @@ p {
 footer {
     text-align: center;
     padding: 5px;
-    background-color: #20818b;
+    background-color: #044f63;
     color: #000;
     margin-top: auto;
   }

@@ -29,6 +29,9 @@
   h4 {
     color:#582cb0;
   }
+
+
+  
 </style>
     <nav>
         <ul>
@@ -90,15 +93,13 @@
                 Jan Kowalski 
               </br>
                 10:15
-              </br>
-                10:30
               </div>
              </td>
           <td class="day"><span class="number">6</span>
             </td>
           <td class="day"><span class="number">7</span>
       </td>
-          <td class="niedostepne"><span class="number">8</span>
+          <td class="day"><span class="number">8</span>
             
       </td>
           <td class="weekend"><span class="number">9</span>
@@ -108,14 +109,14 @@
         </tr>
         <tr>
           <td class="day"><span class="number">11</span>
-            <div class="event" onclick="window.location.href='lekarz1.html'">
+            <div class="event">
               Jan Kowalski 
             </br>
-              8:15
+            <div class="hour" onclick="handleCalendarClick('11', '12', '2023', '08:15')">8:15</div>
             </br>
-              11:30
+            <div class="hour" onclick="handleCalendarClick('11', '12', '2023', '10:30')">10:30</div>
             </div></td>
-          <td class="day"><span class="number">12</span>
+          <td class="niedostepne"><span class="number">12</span>
             <div class="popup" onclick="brak1()">
               Brak terminów
               <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
@@ -133,14 +134,14 @@
         </tr>
         <tr>
           <td class="day"><span class="number">18</span>
-            <div class="event" onclick="window.location.href='lekarz1.html'">
+            <div class="event">
               Jan Kowalski 
             </br>
-              10:15
+            <div class="hour" onclick="handleCalendarClick('18', '12', '2023', '10:15')">10:15</div>
             </br>
-              10:30
+            <div class="hour" onclick="handleCalendarClick('18', '12', '2023', '10:30')">10:30</div>
             </div></td>
-          <td class="day"><span class="number">19</span><div class="popup" onclick="brak1()">
+          <td class="niedostepne"><span class="number">19</span><div class="popup" onclick="brak1()">
             Brak terminów
             <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
           </div>
@@ -158,7 +159,7 @@
         </tr>
         <tr>
           <td class="day"><span class="number">25</span>
-            <div class="event" onclick="window.location.href='lekarz1.html'">
+            <div class="event">
               Jan Kowalski <br>
               8:00<br>
               8:15<br>
@@ -172,7 +173,7 @@
             </div>
           </td>
           <td class="day"><span class="number">26</span>
-            <div class="event" onclick="window.location.href='lekarz1.html'">
+            <div class="event">
               Jan Kowalski 
             </br>
               8:00
