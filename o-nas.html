@@ -26,11 +26,62 @@
         </ul>
     </nav>
 
-    <center>
-    <h1>Chcesz umówić się na wizytę?</h1>
-    <button id="startButton">Umów się na wizytę</button>
-    </center>
-</br>
+    <style>
+        
+    
+        section {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          padding: 20px;
+        }
+    
+        article {
+          flex: 1;
+          margin: 10px;
+        }
+    
+        img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+        }
+    
+        @media only screen and (max-width: 600px) {
+          section {
+            flex-direction: column;
+          }
+        }
+      </style>
+    </head>
+    <body>
+    
+      
+        <h1>Przychodnia Lekarska LekMed</h1>
+        <br>
+        <center><h3>Dlaczego warto wybrać właśnie nas?</h3> </center>
+      
+    
+      <section>
+        <article>
+          <img src="img/img5.jpeg" alt="Lekarz">
+          <h2>Lekarze Specjaliści</h2>
+          <p>Doświadczona kadra lekarzy specjalistów dostępna dla pacjentów przez całą dobę.</p>
+        </article>
+    
+        <article>
+          <img src="img/img6.jpg" alt="Przychodnia">
+          <h2>Nowoczesne Wyposażenie</h2>
+          <p>Przychodnia wyposażona w najnowocześniejszy sprzęt medyczny dla skutecznego leczenia.</p>
+        </article>
+    
+        <article>
+          <img src="img/img1.jpg" alt="Szeroka oferta">
+          <h2>Szeroka oferta usług</h2>
+          <p>Lekarze pediatrzy, lekarzd rodzinni, szczepienia, laboratorium. To wszystko, żeby zadbać o wasze zdrowie.</p>
+        </article>
+      </section>
 <footer>
   <small>
     Copyright © 2023 Patryja Oświęcimska, Kinga Spytkowska
