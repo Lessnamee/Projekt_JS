@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wizyta u lekarza</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/rezerwacja.css">
     <link rel="stylesheet" type="text/css" href="styles/calendar.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
     
@@ -67,15 +68,11 @@
 
       </td>
       <td class="day"><span class="number">1</span> 
-          <div class="event" onclick="window.location.href='lekarz4.html'">
-          Piotr Nowak
-        </br>
-          10:15
-        </br>
-          10:30
-      </br>
-          11:45
-        </div></td>         
+        <div class="event_app">
+          <div class="hour" onclick="handleCalendarClick('1', '12', '2023', '10:30')">10:30</div>
+          <div class="hour" onclick="handleCalendarClick('1', '12', '2023', '10:30')">12:30</div>
+          <div class="hour" onclick="handleCalendarClick('1', '12', '2023', '11:45')">11:45</div>
+          <div></td>         
       <td class="weekend"><span class="number">2</span></span></td>
       <td class="weekend"><span class="number" >3</span></span></td>
     </tr>
@@ -85,24 +82,18 @@
 
       </td>
       <td class="day" id="lekarzCell"><span class="number">5</span></span>
-          <div class="event" onclick="window.location.href='lekarz4.html'">
-            Piotr Nowak
-          </br>
-            11:15
-          </br>
-            13:30
-        </br>
-            14:45
-      </div></td>
+        <div class="event_app">
+          <div class="hour" onclick="handleCalendarClick('5', '12', '2023', '11:15')">11:15</div>
+          <div class="hour" onclick="handleCalendarClick('5', '12', '2023', '13:30')">13:30</div>
+          <div class="hour" onclick="handleCalendarClick('5', '12', '2023', '14:45')">14:45</div>
+          <div></td> </td>
       <td class="day"><span class="number">6</span>
 </td>
       <td class="day"><span class="number">7</span>
+        <div class="event_app">
+          <div class="hour" onclick="handleCalendarClick('7', '12', '2023', '11:15')">11:15</div>
+          <div></td> 
 
-    <div class="event" onclick="window.location.href='lekarz1.html'">
-      Piotr Nowak
-    </br>
-      15:15
-</div>
   
   </td>
       <td class="niedostepne"><span class="number">8</span>
@@ -119,7 +110,7 @@
     <tr>
       <td class="day"><span class="number">11</span>
 </td>
-      <td class="day"><span class="number">12</span>
+      <td class="niedostepne"><span class="number">12</span>
         <div class="popup" onclick="brak1()">
           Brak terminów
           <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
@@ -128,13 +119,13 @@
       <td class="day"><span class="number">13</span></span>
         
       </td>
-      <td class="day"><span class="number">14</span>
+      <td class="niedostepne"><span class="number">14</span>
         <div class="popup" onclick="brak1()">
             Brak terminów
             <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
           </div></span>
 </td>
-      <td class="day"><span class="number">15</span>
+      <td class="niedostepne"><span class="number">15</span>
         <div class="popup" onclick="brak1()">
             Brak terminów
             <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
@@ -147,23 +138,19 @@
       <td class="day"><span class="number">18</span>
 </td>
       <td class="day"><span class="number">19</span>
-        <div class="event" onclick="window.location.href='lekarz4.html'">
-          Piotr Nowak
-        </br>
-          11:15
-        </br>
-          11:30
-      </br>
-          11:45
-        </div></td>
+        <div class="event_app">
+          <div class="hour" onclick="handleCalendarClick('19', '12', '2023', '11:15')">11:15</div>
+          <div class="hour" onclick="handleCalendarClick('19', '12', '2023', '11:30')">11:30</div>
+          <div class="hour" onclick="handleCalendarClick('19', '12', '2023', '11:45')">11:45</div>
+          <div></td>
       <td class="day"><span class="number">20</span>
         </td>
-      <td class="day"><span class="number">21</span>
+      <td class="niedostepne"><span class="number">21</span>
         <div class="popup" onclick="brak1()">
           Brak terminów
           <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
         </div></td>
-      <td class="day"><span class="number">22</span>
+      <td class="niedostepne"><span class="number">22</span>
         <div class="popup" onclick="brak1()">
             Brak terminów
             <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
@@ -179,51 +166,47 @@
       </td>
       <td class="day"><span class="number">26</span>
         
-        <div class="event" onclick="window.location.href='lekarz4.html'">
-          Piotr Nowak
-        </br>
-          11:15
-        </br>
-          11:30
-      </br>
-          11:45
-        </div></td>
+        <div class="event_app">
+          <div class="hour" onclick="handleCalendarClick('26', '12', '2023', '11:15')">11:15</div>
+          <div class="hour" onclick="handleCalendarClick('26', '12', '2023', '11:30')">11:30</div>
+          <div class="hour" onclick="handleCalendarClick('26', '12', '2023', '11:45')">11:45</div>
+          <div></td>
       <td class="day"><span class="number">27</span>
 </td>
       <td class="day"><span class="number">28</span>
-        <div class="event" onclick="window.location.href='lekarz4.html'">
-            Piotr Nowak
-          </br>
-            11:15
-          </br>
-            11:30
-        </br>
-            11:45
-        </br>
-        12:30
-    </br>
-        13:45
-          </div>
+        <div class="event_app">
+        <div class="hour" onclick="handleCalendarClick('28', '12', '2023', '11:15')">11:15</div>
+          <div class="hour" onclick="handleCalendarClick('28', '12', '2023', '11:30')">11:30</div>
+          <div class="hour" onclick="handleCalendarClick('28', '12', '2023', '11:45')">11:45</div>
+          <div class="hour" onclick="handleCalendarClick('28', '12', '2023', '11:15')">12:30</div>
+          <div class="hour" onclick="handleCalendarClick('28', '12', '2023', '12:45')">12:45</div> <div>
     </td>
       <td class="da"><span class="number">29</span>
-        <div class="event" onclick="window.location.href='lekarz4.html'">
-            Piotr Nowak
-          </br>
-            8:15
-          </br>
+        <div class="event_app">
+          <div class="hour" onclick="handleCalendarClick('29', '12', '2023', '08:15')">08:15</div>
+          <div class="hour" onclick="handleCalendarClick('29', '12', '2023', '11:15')">11:15</div>
+          
 
-            11:15
-          </div>
+          <div>
     </td>
       <td class="weekend"><span class="number">30</span></td>
       <td class="weekend"><span class="number">31</span></td>
     </tr>
    
   </table>
+  <center><h3>Podaj termin i rodzaj wizyty:</h3></center>
 
-
-    <div id="appointment-purpose">
-        <h2>Wybierz cel wizyty:</h2>
+  <form id="appointmentForm">
+    <div>
+        <label for="appointmentDate">Data wizyty:</label>
+        <input type="date" id="appointmentDate" required onchange="highlightForm()">
+    </div>
+    <div>
+        <label for="appointmentTime">Godzina wizyty:</label>
+        <input type="time" id="appointmentTime" step=900 min="08:00" max="17:00" required>
+    </div>
+    <div>
+        <label for="appointmentDescription">Opis wizyty:</label>
         <select id="purpose-list">
             <option value="wizyta-kontrolna">Wizyta kontrolna</option>
             <option value="konsultacja">Konsultacja</option>
@@ -232,23 +215,76 @@
             <option value="szczepienie">Szczepienie</option>
         </select>
     </div>
-</center> 
-    <div id="service-prices">
-        <h2>Cennik usług:</h2>
-        <ul>
-            <li>Wizyta kontrolna - 100 zł</li>
-            <li>Konsultacja - 80 zł</li>
-            <li>Choroba - 120 zł</li>
-            <li>Wypisanie recepty - 40 zł</li>
-            <li>Szczepienie - 60 zł</li>
-        </ul>
+    <div>
+       <center> <button class="button" type="button" onclick="saveAppointment()">Dodaj wizytę</button> </center>
     </div>
+</form>
 
-    <div id="umow-button">
-        <a href="umow-wizyte.html" class="appointment-button">Umów</a>
-    </div>
+
+
+<div id="service-prices">
+    <h2>Cennik usług:</h2>
+    <ul>
+        <li id="purpose1">Wizyta kontrolna - 100 zł</li>
+        <li id="purpose2">Konsultacja - 80 zł</li>
+        <li id="purpose3">Choroba - 120 zł</li>
+        <li id="purpose4">Wypisanie recepty - 40 zł</li>
+        <li id="purpose5">Szczepienie - 60 zł</li>
+    </br>
+    <h4>*Płatność tylko w placówce!<h4>
+    </ul>
+</div>
+</center> 
+</br>
+<footer>
+<small>
+Copyright © 2023 Patryja Oświęcimska, Kinga Spytkowska
+</small>
+</footer>
+</body>
+<script>
+  function handleCalendarClick(day, month, year, time) {
+    // Ustaw wartości w formularzu
+    var formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+    document.getElementById('appointmentDate').value = formattedDate; // Ustaw pełną datę
+    document.getElementById('appointmentTime').value = time; // Ustaw godzinę
+
+    // Scroll to the form
+    var form = document.getElementById("appointmentForm");
+    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Optionally, add a visual highlight by adding a CSS class
+    form.classList.add("highlighted");
+
+    // Optionally, remove the highlight after a delay
+    setTimeout(function () {
+        form.classList.remove("highlighted");
+    }, 2000); // 2000 milliseconds (2 seconds) in this example
+}
+
+
+  function saveAppointment() {
+    var appointment = {
+        date: document.getElementById('appointmentDate').value,
+        time: document.getElementById('appointmentTime').value,
+        purpose: document.getElementById('purpose-list').value
+    };
+
+    // Pobierz aktualną listę wizyt z Local Storage lub utwórz nową, jeśli nie istnieje
+    var appointmentsList = JSON.parse(localStorage.getItem('appointments')) || [];
     
-    <script src="calendar.js"></script>
+    // Dodaj nową wizytę do listy
+    appointmentsList.push(appointment);
+
+    // Zapisz listę wizyt z powrotem do Local Storage
+    localStorage.setItem('appointments', JSON.stringify(appointmentsList));
+
+    // Przenieś użytkownika na stronę "rezerwacja.html"
+    window.location.href = 'rezerwacja.html';}
+  var doctorId = "lekarz1"; 
+  localStorage.setItem("lekarz1", doctorId);
+</script>
+
 </body>
 
 </html>
