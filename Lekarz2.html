@@ -55,144 +55,136 @@
     
       </br>
         <center><h3>Grudzień 2023</h3></center>
-          <center>  <table id="calendar">
-            <tr>
-              <th class="day-name">Poniedziałek</th>
-              <th class="day-name">Wtorek</th>
-              <th class="day-name">Środa</th>
-              <th class="day-name">Czwartek</th>
-              <th class="day-name">Piątek</th>
-              <th class="day-name">Sobota</th>
-              <th class="day-name">Niedziela</th>
-            </tr>
-            <tr>
-              <td class="other_month"><span class="number">27</span></td>
-              <td class="other_month"><span class="number">28</span>
-               
-                </td>
-              <td class="other_month"><span class="number">29</span></td>
-              <td class="day today">
-                <span class="number">30</span>
-                 
+        <center>  <table id="calendar">
+          <tr>
+            <th class="day-name">Poniedziałek</th>
+            <th class="day-name">Wtorek</th>
+            <th class="day-name">Środa</th>
+            <th class="day-name">Czwartek</th>
+            <th class="day-name">Piątek</th>
+            <th class="day-name">Sobota</th>
+            <th class="day-name">Niedziela</th>
+          </tr>
+          <tr>
+            <td class="other_month"><span class="number">27</span></td>
+            <td class="other_month"><span class="number">28</span>
+             
               </td>
-              <td class="day"><span class="number">1</span> 
-             </td>         
-              <td class="weekend"><span class="number">2</span></span></td>
-              <td class="weekend"><span class="number" >3</span></span></td>
-            </tr>
-            <tr>
-              <td class="niedostepne">
-                <span class="number">4</span>
-                <div class="popup" onclick="brak()">
-                  Brak terminów
-                  <span class="popuptext" id="myPopup">Brak terminów w danym dniu, proszę wybrać inny dzień.</span>
-                </div>
-              </td>
-              <td class="day" id="lekarzCell"><span class="number">5</span></span>
-                <div class="event" onclick="handleCalendarClick('5', '12', '2023', '10:15')">
-                    Jan Kowalski 
-                  </br>
-                    10:15
-                  </div>
-                 </td>
-              <td class="day"><span class="number">6</span>
-                </td>
-              <td class="day"><span class="number">7</span>
-          </td>
-              <td class="day"><span class="number">8</span>
+            <td class="other_month"><span class="number">29</span></td>
+            <td class="day today">
+              <span class="number">30</span>
                 
-          </td>
-              <td class="weekend"><span class="number">9</span>
-              
+            </td>
+            <td class="day"><span class="number">1</span> 
+              <div class="event_app">
+                <div class="hour" onclick="handleCalendarClick('20', '12', '2023', '08:00')">08:00</div>
+                
+                <div>
+                </td>         
+            <td class="weekend"><span class="number">2</span></span></td>
+            <td class="weekend"><span class="number" >3</span></span></td>
+          </tr>
+          <tr>
+            <td class="day">
+              <span class="number">4</span>
+            
+            </td>
+            <td class="day" id="lekarzCell"><span class="number">5</span></span>
               </td>
-              <td class="weekend"><span class="number">10</span></td>
-            </tr>
-            <tr>
-              <td class="day"><span class="number">11</span>
-                <div class="event">
-                  Jan Kowalski 
-                </br>
-                <div class="hour" onclick="handleCalendarClick('11', '12', '2023', '08:15')">8:15</div>
-                </br>
-                <div class="hour" onclick="handleCalendarClick('11', '12', '2023', '10:30')">10:30</div>
+            <td class="day"><span class="number">6</span>
+              <div class="event_app">
+                <div class="hour" onclick="handleCalendarClick('6', '12', '2023', '13:15')">13:15</div>
+                <div class="hour" onclick="handleCalendarClick('6', '12', '2023', '14:45')">14:45</div>
+                <div class="hour" onclick="handleCalendarClick('6', '12', '2023', '15:00')">15:00</div>
+                <div></td>
+            <td class="day"><span class="number">7</span>
+              
+          
+        
+        </td>
+            <td class="niedostepne"><span class="number">8</span>
+              <div class="popup" onclick="brak1()">
+                Brak terminów
+                <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+              </div>
+        </td>
+            <td class="weekend"><span class="number">9</span>
+            
+            </td>
+            <td class="weekend"><span class="number">10</span></td>
+          </tr>
+          <tr>
+            <td class="day"><span class="number">11</span>
+              </td>
+              <td class="day"><span class="number">12</span>
+              </td>
+            <td class="niedostepne"><span class="number">13</span></span>
+              <div class="popup" onclick="brak1()">
+                Brak terminów
+                <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
+              </div>
+            </td>
+            <td class="day"><span class="number">14</span></span>
+              </td>
+            <td class="day"><span class="number">15</span>
+              <div class="event_app">
+                <div class="hour" onclick="handleCalendarClick('15', '12', '2023', '15:15')">15:15</div>
+              
+          </div></td>
+            <td class="weekend"><span class="number">16</span></td>
+            <td class="weekend"><span class="number">17</span></td>
+          </tr>
+          <tr>
+            <td class="day"><span class="number">18</span>
+              </td>
+            <td class="day"><span class="number">19</span>
+              </td>
+            <td class="day"><span class="number">20</span>
+              <div class="event_app">
+          <div class="hour" onclick="handleCalendarClick('20', '12', '2023', '13:15')">13:15</div>
+          <div class="hour" onclick="handleCalendarClick('20', '12', '2023', '14:45')">14:45</div>
+          <div class="hour" onclick="handleCalendarClick('20', '12', '2023', '15:00')">15:00</div>
+          <div>
+      </td>
+      <td class="day"><span class="number">21</span>
+      </td>
+            <td class="day"><span class="number">22</span>
+              <div class="event_app">
+              <div class="hour" onclick="handleCalendarClick('22', '12', '2023', '13:15')">13:15</div>
+          <div class="hour" onclick="handleCalendarClick('22', '12', '2023', '14:45')">14:45</div>
+          <div class="hour" onclick="handleCalendarClick('22', '12', '2023', '15:00')">15:00</div><div></td>
+            
+            <td class="weekend"><span class="number">23</span></td>
+            <td class="weekend"><span class="number">24</span></td>
+          </tr>
+          <tr>
+            <td class="day"><span class="number">25</span>
+              
+            </td>
+            <td class="day"><span class="number">26</span>
+          </td>
+              <td class="niedostepne"><span class="number">27</span>
+                <div class="popup" onclick="brak1()">
+                  Brak terminów
+                  <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
                 </div></td>
-              <td class="niedostepne"><span class="number">12</span>
+            <td class="day"><span class="number">28</span>
+              
+          </td>
+            
+              <td class="niedostepne"><span class="number">29</span>
                 <div class="popup" onclick="brak1()">
                   Brak terminów
                   <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
                 </div>
-              </td>
-              <td class="day"><span class="number">13</span></span>
-                
-              </td>
-              <td class="day"><span class="number">14</span></span>
-                </td>
-              <td class="day"><span class="number">15</span>
-               </td>
-              <td class="weekend"><span class="number">16</span></td>
-              <td class="weekend"><span class="number">17</span></td>
-            </tr>
-            <tr>
-              <td class="day"><span class="number">18</span>
-                <div class="event">
-                  Jan Kowalski 
-                </br>
-                <div class="hour" onclick="handleCalendarClick('18', '12', '2023', '10:15')">10:15</div>
-                </br>
-                <div class="hour" onclick="handleCalendarClick('18', '12', '2023', '10:30')">10:30</div>
-                </div></td>
-              <td class="niedostepne"><span class="number">19</span><div class="popup" onclick="brak1()">
-                Brak terminów
-                <span class="popuptext" id="myPopup">Brak terminów w danym dniu.</span>
-              </div>
-               </td>
-              <td class="day"><span class="number">20</span>
-                
           </td>
-              <td class="day"><span class="number">21</span>
-               </td>
-              <td class="day"><span class="number">22</span>
-                </td>
-              
-              <td class="weekend"><span class="number">23</span></td>
-              <td class="weekend"><span class="number">24</span></td>
-            </tr>
-            <tr>
-              <td class="day"><span class="number">25</span>
-                <div class="event">
-                  Jan Kowalski <br>
-                  8:00<br>
-                  8:15<br>
-                  8:30<br>
-                  8:45<br>
-                  9:00<br>
-                  9:15<br>
-                  9:30<br>
-                  9:45<br>
-    
-                </div>
-              </td>
-              <td class="day"><span class="number">26</span>
-                <div class="event">
-                  Jan Kowalski 
-                </br>
-                  8:00
-                </br>
-                  10:15
-                </br>
-              13:45
-                </div>
-               </td>
-              <td class="day"><span class="number">27</span>
-                
-            </td>
-            <td class="day"><span class="number">28</span></td>
-            <td class="da"><span class="number">29</span></td>
+          </td>
+            
             <td class="weekend"><span class="number">30</span></td>
             <td class="weekend"><span class="number">31</span></td>
-            </tr>
-           
-          </table>
+          </tr>
+         
+        </table>
         </br>
           <center><h3>Podaj termin i rodzaj wizyty:</h3></center>
     
@@ -282,7 +274,7 @@
             // Przenieś użytkownika na stronę "rezerwacja.html"
             window.location.href = 'rezerwacja.html';}
           var doctorId = "lekarz2"; 
-          localStorage.setItem("lekarz2", doctorId);
+          localStorage.setItem(doctorId, "lekarz2");
         </script>
     
     </body>

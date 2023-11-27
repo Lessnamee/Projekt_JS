@@ -60,6 +60,31 @@ span.number {
     color: black;
     text-decoration: none;
   }
+  #calendar .event_app {
+    flex: 0 0 auto;
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+    line-height: 14px;
+    background: rgba(6, 6, 6, 0.2);
+    border: 1px solid #2c9b9e;
+    color: black;
+    text-decoration: none;
+  }
+  .hour {
+    flex: 0 0 auto;
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 5px;
+    width: fit-content;
+    margin-bottom: 5px;
+    line-height: 14px;
+    background: #acf2d0;
+    border: 1px solid #2c9b9e;
+    color: black;
+    text-decoration: none;
+  }
   .weekend {
     background-color: #cee7eb;
   }
