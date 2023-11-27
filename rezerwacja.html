@@ -80,23 +80,8 @@
 // Pobierz listę wizyt z Local Storage
 var appointmentsList = JSON.parse(localStorage.getItem('appointments')) || [];
 
-// Pobierz doctorId z Local Storage
-var doctorId = localStorage.getItem('doctorId') || "lekarz1";
 
-// Obiekt z informacjami o lekarzach
-var doctorsInfo = {
-    lekarz1: { name: "Jan Kowalski", specialization: "Pediatra" },
-    lekarz2: { name: "Anna Nowak", specialization: "Pediatra" },
-    lekarz3: { name: "Maria Wiśniewska", specialization: "Lekarz rodzinny" },
-    lekarz4: { name: "Piotr Nowak", specialization: "Lekarz rodzinny" }
-};
-var purposePrice = {
-    purpose1: { price: "100zł" },
-    purpose2: { price: "80zł" },
-    purpose3: { price: "120zł" },
-    purpose4: { price: "40zł" },
-    purpose5: { price: "60zł" }
-};
+
 // Wybierz kontener, w którym będą wyświetlane wizyty
 var appointmentsContainer = document.getElementById('appointmentsContainer');
 
@@ -104,17 +89,15 @@ var appointmentsContainer = document.getElementById('appointmentsContainer');
 if (appointmentsList.length > 0) {
     // Wyświetl każdą wizytę w kontenerze
     appointmentsList.forEach(function (appointment, index) {
-        var doctorInfo = doctorsInfo[doctorId] || { name: "Brak danych", specialization: "Brak danych" };
-        var purposeInfo = purposePrice[appointment.purpose] || { price: "100zł" };
+
 
         var appointmentDiv = document.createElement('div');
         appointmentDiv.innerHTML = `
-            <p>Lekarz: ${doctorInfo.name}</p>
-            <p>Specjalizacja: ${doctorInfo.specialization}</p>
+            <p>Lekarz: ${appointment.doctor}</p>
             <p>Data: ${appointment.date}</p>
             <p>Godzina: ${appointment.time}</p>
-            <p>Cel wizyty: ${appointment.purpose}</p>
-            <p>Cena: ${purposeInfo.price}</p>
+            <p>Szczegóły: ${appointment.purpose}</p>
+            
             
             <button class="button" onclick="removeAppointment(${index})">Anuluj rezerwację wizyty</button>
           </br>

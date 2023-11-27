@@ -196,27 +196,34 @@
     
           <form id="appointmentForm">
             <div>
+              <label for="doctor">Twój lekarz:</label>
+              <select id="doctorInfo">
+                <option value="Maria Wiśniewska, lekarz rodzinny">Maria Wiśniewska</option>
+            </select>
+          </div>
+            <div>
                 <label for="appointmentDate">Data wizyty:</label>
                 <input type="date" id="appointmentDate" required onchange="highlightForm()">
             </div>
             <div>
                 <label for="appointmentTime">Godzina wizyty:</label>
-                <input type="time" id="appointmentTime" step=900 min="08:00" max="17:00" required>
+                <input type="time" id="appointmentTime"  min="08:00" max="18:00" step="900" required>
             </div>
             <div>
                 <label for="appointmentDescription">Opis wizyty:</label>
                 <select id="purpose-list">
-                    <option value="wizyta-kontrolna">Wizyta kontrolna</option>
-                    <option value="konsultacja">Konsultacja</option>
-                    <option value="choroba">Choroba</option>
-                    <option value="wypisanie-recepty">Wypisanie recepty</option>
-                    <option value="szczepienie">Szczepienie</option>
+                    <option value="Wizyta kontrolna, 100zł">Wizyta kontrolna</option>
+                    <option value="Konsultacja, 80zł">Konsultacja</option>
+                    <option value="Choroba, 120zł">Choroba</option>
+                    <option value="Wypisanie recepty, 40zł">Wypisanie recepty</option>
+                    <option value="Szczepienie, 60zł">Szczepienie</option>
                 </select>
             </div>
             <div>
                <center> <button class="button" type="button" onclick="saveAppointment()">Dodaj wizytę</button> </center>
             </div>
         </form>
+        
     
         
     
@@ -266,26 +273,25 @@
               });
         
     
-          function saveAppointment() {
-            var appointment = {
-                date: document.getElementById('appointmentDate').value,
-                time: document.getElementById('appointmentTime').value,
-                purpose: document.getElementById('purpose-list').value
-            };
-    
-            // Pobierz aktualną listę wizyt z Local Storage lub utwórz nową, jeśli nie istnieje
-            var appointmentsList = JSON.parse(localStorage.getItem('appointments')) || [];
-            
-            // Dodaj nową wizytę do listy
-            appointmentsList.push(appointment);
-    
-            // Zapisz listę wizyt z powrotem do Local Storage
-            localStorage.setItem('appointments', JSON.stringify(appointmentsList));
-    
-            // Przenieś użytkownika na stronę "rezerwacja.html"
-            window.location.href = 'rezerwacja.html';}
-          var doctorId = "lekarz2"; 
-          localStorage.setItem(doctorId, "lekarz2");
+              function saveAppointment() {
+                var appointment = {
+                    date: document.getElementById('appointmentDate').value,
+                    time: document.getElementById('appointmentTime').value,
+                    purpose: document.getElementById('purpose-list').value,
+                    doctor: document.getElementById('doctorInfo').value
+                };
+        
+                // Pobierz aktualną listę wizyt z Local Storage lub utwórz nową, jeśli nie istnieje
+                var appointmentsList = JSON.parse(localStorage.getItem('appointments')) || [];
+                
+                // Dodaj nową wizytę do listy
+                appointmentsList.push(appointment);
+        
+                // Zapisz listę wizyt z powrotem do Local Storage
+                localStorage.setItem('appointments', JSON.stringify(appointmentsList));
+        
+                // Przenieś użytkownika na stronę "rezerwacja.html"
+                window.location.href = 'rezerwacja.html';}
         </script>
     
     </body>
