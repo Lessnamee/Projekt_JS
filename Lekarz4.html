@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="styles/rezerwacja.css">
     <link rel="stylesheet" type="text/css" href="styles/calendar.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
+    <script src="calendar.js"></script>
+    <script src="rezerwacja.js"></script>
+    <script src="style.js"></script>
     
     <script src="calendar.js"></script>
 
@@ -243,24 +246,29 @@ Copyright © 2023 Patryja Oświęcimska, Kinga Spytkowska
 </footer>
 </body>
 <script>
-  function handleCalendarClick(day, month, year, time) {
-    // Ustaw wartości w formularzu
-    var formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-    document.getElementById('appointmentDate').value = formattedDate; // Ustaw pełną datę
-    document.getElementById('appointmentTime').value = time; // Ustaw godzinę
+  document.addEventListener('DOMContentLoaded', function () {
+    var availableDates = ["2023-12-01", "2023-12-05", "2023-12-07", "2023-12-19", "2023-12-26", "2023-12-28", "2023-12-29"]; // Lista dostępnych dat
 
-    // Scroll to the form
-    var form = document.getElementById("appointmentForm");
-    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    var appointmentDateInput = document.getElementById('appointmentDate');
 
-    // Optionally, add a visual highlight by adding a CSS class
-    form.classList.add("highlighted");
+    appointmentDateInput.addEventListener('input', function() {
+      var selectedDate = appointmentDateInput.value;
 
-    // Optionally, remove the highlight after a delay
-    setTimeout(function () {
-        form.classList.remove("highlighted");
-    }, 2000); // 2000 milliseconds (2 seconds) in this example
-}
+      if (!isValidDate(selectedDate) || !isAvailableDate(selectedDate)) {
+        alert('Proszę wybrać poprawną datę z dostępnych opcji.');
+        appointmentDateInput.value = ''; // W przypadku nieprawidłowej daty usuń wartość
+      }
+    });
+
+    function isValidDate(dateString) {
+      var regex = /^\d{4}-\d{2}-\d{2}$/;
+      return dateString.match(regex) !== null;
+    }
+
+    function isAvailableDate(date) {
+      return availableDates.includes(date);
+    }
+  });
 
 
   function saveAppointment() {

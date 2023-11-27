@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="styles/calendar.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js"></script>
+    <script src="calendar.js"></script>
+    <script src="rezerwacja.js"></script>
+    <script src="style.js"></script>
 
 </head>
 
@@ -235,24 +238,34 @@
     </footer>
     </body>
         <script>
-          function handleCalendarClick(day, month, year, time) {
-            // Ustaw wartości w formularzu
-            var formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-            document.getElementById('appointmentDate').value = formattedDate; // Ustaw pełną datę
-            document.getElementById('appointmentTime').value = time; // Ustaw godzinę
-        
-            // Scroll to the form
-            var form = document.getElementById("appointmentForm");
-            form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-            // Optionally, add a visual highlight by adding a CSS class
-            form.classList.add("highlighted");
-        
-            // Optionally, remove the highlight after a delay
-            setTimeout(function () {
-                form.classList.remove("highlighted");
-            }, 2000); // 2000 milliseconds (2 seconds) in this example
-        }
+          document.addEventListener('DOMContentLoaded', function () {
+            var availableDates = ["2023-12-01", "2023-12-06", "2023-12-15", "2023-12-20", "2023-12-22"]; // Lista dostępnych dat
+    
+            var appointmentDateInput = document.getElementById('appointmentDate');
+    
+            appointmentDateInput.addEventListener('input', function() {
+              var selectedDate = appointmentDateInput.value;
+    
+              if (!isValidDate(selectedDate) || !isAvailableDate(selectedDate)) {
+                alert('Proszę wybrać poprawną datę z dostępnych opcji.');
+                appointmentDateInput.value = ''; // W przypadku nieprawidłowej daty usuń wartość
+              }
+            });
+    
+            function isValidDate(dateString) {
+              var regex = /^\d{4}-\d{2}-\d{2}$/;
+              return dateString.match(regex) !== null;
+            }
+    
+            function isAvailableDate(date) {
+              return availableDates.includes(date);
+            }
+          });
+    
+
+
+
+          
         
     
           function saveAppointment() {

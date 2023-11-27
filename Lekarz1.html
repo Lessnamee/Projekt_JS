@@ -191,7 +191,7 @@
         </div>
         <div>
             <label for="appointmentTime">Godzina wizyty:</label>
-            <input type="time" id="appointmentTime" step=900 min="08:00" max="17:00" required>
+            <input type="time" id="appointmentTime"  min="08:00" max="18:00" step="900" required>
         </div>
         <div>
             <label for="appointmentDescription">Opis wizyty:</label>
@@ -231,24 +231,31 @@
 </footer>
 </body>
     <script>
-      function handleCalendarClick(day, month, year, time) {
-        // Ustaw wartości w formularzu
-        var formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-        document.getElementById('appointmentDate').value = formattedDate; // Ustaw pełną datę
-        document.getElementById('appointmentTime').value = time; // Ustaw godzinę
-    
-        // Scroll to the form
-        var form = document.getElementById("appointmentForm");
-        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    
-        // Optionally, add a visual highlight by adding a CSS class
-        form.classList.add("highlighted");
-    
-        // Optionally, remove the highlight after a delay
-        setTimeout(function () {
-            form.classList.remove("highlighted");
-        }, 2000); // 2000 milliseconds (2 seconds) in this example
-    }
+      document.addEventListener('DOMContentLoaded', function () {
+        var availableDates = ["2023-12-11", "2023-12-05", "2023-12-18", "2023-12-25", "2023-12-26"]; // Lista dostępnych dat
+
+        var appointmentDateInput = document.getElementById('appointmentDate');
+
+        appointmentDateInput.addEventListener('input', function() {
+          var selectedDate = appointmentDateInput.value;
+
+          if (!isValidDate(selectedDate) || !isAvailableDate(selectedDate)) {
+            alert('Proszę wybrać poprawną datę z dostępnych opcji.');
+            appointmentDateInput.value = ''; // W przypadku nieprawidłowej daty usuń wartość
+          }
+        });
+
+        function isValidDate(dateString) {
+          var regex = /^\d{4}-\d{2}-\d{2}$/;
+          return dateString.match(regex) !== null;
+        }
+
+        function isAvailableDate(date) {
+          return availableDates.includes(date);
+        }
+      });
+
+
     
 
       function saveAppointment() {
