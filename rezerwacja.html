@@ -109,22 +109,29 @@ if (appointmentsList.length > 0) {
     appointmentsContainer.innerHTML = '<p>Brak zaplanowanych wizyt.</p>';
 }
 
-// Funkcja do usuwania wizyty
+/// Funkcja do usuwania wizyty
 function removeAppointment(index) {
-    // Usuń wizytę z listy
-    appointmentsList.splice(index, 1);
+    // Pytaj użytkownika, czy na pewno chce usunąć rezerwację
+    var confirmation = confirm("Czy na pewno chcesz usunąć rezerwację?");
 
-    // Zapisz zaktualizowaną listę w Local Storage
-    localStorage.setItem('appointments', JSON.stringify(appointmentsList));
+    // Jeśli użytkownik kliknie "OK" (czyli true), usuń wizytę
+    if (confirmation) {
+        // Usuń wizytę z listy
+        appointmentsList.splice(index, 1);
 
-    // Sprawdź, czy istnieją wizyty
-    if (appointmentsList.length > 0) {
-        // Usuń istniejący element z kontenera
-        appointmentsContainer.removeChild(appointmentsContainer.childNodes[index - 1]);
-    } else {
-        // Jeśli nie ma żadnych pozostałych wizyt, wyświetl komunikat
-        appointmentsContainer.innerHTML = '<p>Brak zaplanowanych wizyt.</p>';
+        // Zapisz zaktualizowaną listę w Local Storage
+        localStorage.setItem('appointments', JSON.stringify(appointmentsList));
+
+        // Sprawdź, czy istnieją wizyty
+        if (appointmentsList.length > 0) {
+            // Usuń istniejący element z kontenera
+            appointmentsContainer.removeChild(appointmentsContainer.childNodes[index - 1]);
+        } else {
+            // Jeśli nie ma żadnych pozostałych wizyt, wyświetl komunikat
+            appointmentsContainer.innerHTML = '<p>Brak zaplanowanych wizyt.</p>';
+        }
     }
+    // Jeśli użytkownik kliknie "Anuluj" (czyli false), nic się nie zmienia
 }
 </script>
 
